@@ -4,4 +4,5 @@ feature 'attack' do
     click_button 'attack'
     expect(page).to have_content("kar-ho attacked samir")
   end
+  
 end

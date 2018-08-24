@@ -1,8 +1,8 @@
 describe Game do
 
+  subject(:game) { Game.new(samir, karho) }
   let(:samir) { double :samir }
   let(:karho) { double :karho }
-  subject(:game) { Game.new(samir, karho) }
 
   describe '#attack' do
     it "damages the opponent" do
@@ -16,4 +16,12 @@ describe Game do
       expect(Game).to respond_to(:new).with(2).arguments
     end
   end
+
+  describe '#switch_turns' do
+    it 'switches the turn' do
+      game.switch_turns
+      expect(game.current_turn).to eq karho
+    end
+  end
+
 end
